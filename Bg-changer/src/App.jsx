@@ -7,10 +7,14 @@ function App() {
 
   return (
     <div className='w-full h-screen' style={{background:color}}>
-      <button onClick={()=>setColor('red')}>red</button>
-      <button onClick={()=>setColor('pink')}>red</button>
-      <button onClick={()=>setColor('blue')}>red</button>
-      <button onClick={()=>setColor('Black')}>red</button>
+      <div className='flex flex-wrap space-x-2'>
+      <button onClick={()=>setColor('red')} className=' bg-white text-black rounded-lg'> red </button>
+      <button onClick={()=>setColor('pink')} className=' bg-white text-black rounded-lg'> pink </button>
+      <button onClick={()=>setColor('blue')}>blue</button>
+      <button onClick={()=>setColor('Black')}>Black</button>
+      <buttin></buttin>
+      </div>
+      
     </div >
     
   )
