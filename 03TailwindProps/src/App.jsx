@@ -6,19 +6,35 @@ import Card from "./Components/Card";
 
 function App() {
   const [count, setCount] = useState(0);
-let user={name:'Ayush',email:"ayushKale@gmail.com"}
-let arr=["ayush","himanshu","rajesh"]
-const myObject = {
-  key1: 'value1',
-  key2: 'value2',
-  // ... other key-value pairs
-};
+
+const secondObj=[
+  {
+    name:"aman",
+    email:"amanverma85.33@gmail.com"
+  },
+  {
+    name:"ayush",
+    email:"ayushkale85.33@gmail.com"
+  }
+]
+const card= secondObj.map((object)=>{
+  return  <>
+   <Card obj={object} /> <br/>
+ </>
+}
+ 
+)
   return (
     <>
     
       <h1 className="bg-green-400 text-black p-4 mb-4 rounded-lg">Tailwind Test</h1>
-      <Card card="Card1" obj={myObject}/>
-      <Card/>
+      {/* <Card obj={myObject}/> */}
+      <div className="flex flex-wrap " > 
+        {card}
+      </div>
+     
+      {/* <Card card="Card1" obj={myObject}/>
+      <Card card="ayush" obj={secondObj}/> */}
     </>
   );
 }
