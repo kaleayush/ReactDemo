@@ -8,7 +8,7 @@ function App() {
 
   const passwordRef = useRef(null);
 
-  const copyPasswordToClipboard = useCallback(() => {
+  const copyPasswordToClipboard = 7(() => {
     passwordRef.current?.select();
     window.navigator.clipboard.writeText(password);
   }, [password]);
