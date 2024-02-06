@@ -1,10 +1,10 @@
 import React, { useId } from "react";
 
 function InputBox({
-  label,
-  amount,
-  onAmountchange,
-  onCurrencyChange,
+  label,//form
+  amount,//=10
+  onAmountchange,//function setAmount
+  onCurrencyChange,// function setAmount()
   currencyOptions = [],
   selectCurrency = "usd",
   amountDesable = false,
