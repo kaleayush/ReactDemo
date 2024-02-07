@@ -7,9 +7,17 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Github, { GithubInfo } from "./Component/Github/Github.jsx";
-
-import { Home, About, Contact, Product, Layout } from "./index.jsx";
+//
+import {
+  Home,
+  About,
+  Contact,
+  Product,
+  Layout,
+  Downloadcmp,
+  Github,
+  GithubInfo,
+} from "./index.jsx";
 
 // const router = createBrowserRouter([
 //   {
@@ -34,9 +42,14 @@ import { Home, About, Contact, Product, Layout } from "./index.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home />} />
+      <Route path="/" element={<Home />}>
+        <Route path="Home/Download" element={<Downloadcmp />} />
+      </Route>
       <Route path="/About" element={<About />} />
-      <Route path="/Contact" element={<Contact />} />
+      <Route path="/Contact" element={<Contact />}>
+        {/* http://localhost:5173/Contact?name=ayush&email=ayushkale%40gmail.com&tel=12345678 */}
+        <Route path="/Contact/:name/:email/:tel" element={<>hellow</>}></Route>
+      </Route>
       <Route loader={GithubInfo} path="/Github" element={<Github />} />
       <Route
         path="/Product/:ProductNo/:ProductName/:isActive"
