@@ -46,8 +46,7 @@ const router = createBrowserRouter(
         <Route path="Home/Download" element={<Downloadcmp />} />
       </Route>
       <Route path="/About" element={<About />} />
-      <Route path="/Contact" element={<Contact />}>
-        {/* http://localhost:5173/Contact?name=ayush&email=ayushkale%40gmail.com&tel=12345678 */}
+      <Route path="/Contact" element={<Contact />}> 
         <Route path="/Contact/:name/:email/:tel" element={<>hellow</>}></Route>
       </Route>
       <Route loader={GithubInfo} path="/Github" element={<Github />} />
