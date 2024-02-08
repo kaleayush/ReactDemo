@@ -8,6 +8,7 @@ function App() {
   console.log(todos, "todos array");
   const addTodo = (todo) => {
     setTodos((pretodos) => [{ id: Date.now(), ...todo }, ...pretodos]);
+    console.log(todos, "addtodos console");
   };
 
   const updateTodo = (id, todo) => {
@@ -25,9 +26,13 @@ function App() {
       )
     );
   };
+
+
   useEffect(() => {
-    const todo = JSON.parse(localStorage.getItem("todos"));
-    setTodos(todo);
+    const getTodo = JSON.parse(localStorage.getItem("todos"));
+    if (getTodo && getTodo.length > 0) {
+      setTodos(getTodo);
+    }
   }, []);
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
