@@ -27,7 +27,6 @@ function App() {
     );
   };
 
-
   useEffect(() => {
     const getTodo = JSON.parse(localStorage.getItem("todos"));
     if (getTodo && getTodo.length > 0) {
@@ -63,5 +62,4 @@ function App() {
     </>
   );
 }
-
 export default App;
