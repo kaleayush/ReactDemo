@@ -1,4 +1,5 @@
 import { createSlice,nanoid } from "@reduxjs/toolkit";
+import {useEffect} from 'react'
 
 const initialState={
   todos: [{
@@ -6,9 +7,10 @@ const initialState={
     text:"hello todos"
   }]
 }
-// const initialState = {
-//   todos: [{id: 1, text: "Hello world"}]
-// }
+// useEffect(()=>(
+// localStorage.setItem(todos,JSON.stringify(initialState))
+
+// ),[])
 
 export const todoSlice = createSlice({
   name: 'todo',
